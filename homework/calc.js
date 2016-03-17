@@ -1,5 +1,7 @@
 // DEFINE YOUR VARIABLES HERE
 var select = document.querySelector("figure");
+var runningTotal = 0;
+var currentNum = "";
 // DEFINE YOUR FUNCTIONS HERE
 
 function handleButtonClick(element) {
@@ -7,6 +9,7 @@ function handleButtonClick(element) {
     // element.value
     if ( Number(element.value)){
       select.innerHTML = select.innerHTML + element.value;
+      currentNum = currentNum + element.value;
     }
     if (element.value === "0"){
       select.innerHTML = select.innerHTML + "0";
@@ -18,23 +21,27 @@ function handleButtonClick(element) {
     //   select.innerHTML = select.innerHTML + element.value;
     //   }
     if (element.value === "+"){
-      select.innerHTML = select.innerHTML + "+";
+      runningTotal = addToTotal(runningTotal, currentNum);
+      select.innerHTML = select.innerHTML + element.value;
+      // select.innerHTML = '';
     }
-    if (element.value === "-"){
-      select.innerHTML = select.innerHTML + "-";
-    }
-    if (element.value === "/"){
-      select.innerHTML = select.innerHTML + "/";
-    }
-    if (element.value === "x"){
-      select.innerHTML = select.innerHTML + "x";
-    }
-    if (element.value === "."){
-      select.innerHTML = select.innerHTML + ".";
-    }
-    if (element.value === "="){
-
-    }
+    // if (element.value === "-"){
+    //   select.innerHTML = select.innerHTML + "-";
+    // }
+    // if (element.value === "/"){
+    //   select.innerHTML = select.innerHTML + "/";
+    // }
+    // if (element.value === "x"){
+    //   select.innerHTML = select.innerHTML + "x";
+    // }
+    // if (element.value === "."){
+    //   select.innerHTML = select.innerHTML + ".";
+    // }
+    // if (element.value === "="){
+    //   newNumber = select.innerHTML
+    //   var newTotal = addToTotal(runningTotal, newNumber);
+    //   select.innerHTML = newTotal;
+    // }
     if (element.value === "clear"){
       select.innerHTML = " ";
     }
@@ -45,19 +52,19 @@ function handleButtonClick(element) {
 
 
 function addToTotal(runningTotal, newNumber) {
-  var newTotal = runningTotal + newNumber;
+  var newTotal = Number(runningTotal) + Number(newNumber);
   return newTotal;
 }
 function subtractFromTotal(runningTotal, newNumber) {
-  var newTotal = runningTotal - newNumber;
+  var newTotal = Number(runningTotal) - Number(newNumber);
   return newTotal;
 }
 function multiplyWithTotal(runningTotal, newNumber) {
-  var newTotal = runningTotal * newNumber;
+  var newTotal = Number(runningTotal) * Number(newNumber);
   return newTotal;
 }
 function divideByTotal(runningTotal, newNumber) {
-  var newTotal = runningTotal / newNumber;
+  var newTotal = Number(runningTotal) / Number(newNumber);
   return newTotal;
 }
 /**
