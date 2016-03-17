@@ -7,8 +7,36 @@ function handleButtonClick(element) {
     // element.value
     if ( Number(element.value)){
       select.innerHTML = select.innerHTML + element.value;
-    } else if ( !Number(element.value)) {
-      select.innerHTML = element.value;
+    }
+    if (element.value === "0"){
+      select.innerHTML = select.innerHTML + "0";
+    }
+    // else if ( !Number(element.value)) {
+    //   select.innerHTML = select.innerHTML + element.value;
+    // }
+    // if ( !Number (element.value)){
+    //   select.innerHTML = select.innerHTML + element.value;
+    //   }
+    if (element.value === "+"){
+      select.innerHTML = select.innerHTML + "+";
+    }
+    if (element.value === "-"){
+      select.innerHTML = select.innerHTML + "-";
+    }
+    if (element.value === "/"){
+      select.innerHTML = select.innerHTML + "/";
+    }
+    if (element.value === "x"){
+      select.innerHTML = select.innerHTML + "x";
+    }
+    if (element.value === "."){
+      select.innerHTML = select.innerHTML + ".";
+    }
+    if (element.value === "="){
+
+    }
+    if (element.value === "clear"){
+      select.innerHTML = " ";
     }
 }
 
