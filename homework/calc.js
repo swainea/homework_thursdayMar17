@@ -1,4 +1,5 @@
 // DEFINE YOUR VARIABLES HERE
+var select = document.querySelector("figure");
 
 
 
@@ -7,11 +8,39 @@
 function handleButtonClick(element) {
     // You can use this to get the value of the button:
     // element.value
-
+    if ( Number(element.value)){
+      select.innerHTML = element.value;
 }
 
 
+    // } else if (element.value === "9"){
+    //   select.innerHTML = "heeloo"
+    //
+    //   var total = 9;
+    // } else if { (element.value === "8"){
+    //   var total = 8;
+    // }
+    // select.innerHTML = total;
 
+
+
+}
+function addToTotal(runningTotal, newNumber) {
+  var newTotal = runningTotal + newNumber;
+  return newTotal;
+}
+function subtractFromTotal(runningTotal, newNumber) {
+  var newTotal = runningTotal - newNumber;
+  return newTotal;
+}
+function multiplyWithTotal(runningTotal, newNumber) {
+  var newTotal = runningTotal * newNumber;
+  return newTotal;
+}
+function divideByTotal(runningTotal, newNumber) {
+  var newTotal = runningTotal / newNumber;
+  return newTotal;
+}
 /**
  * This event handler will fire for ALL button clicks. You need to decide
  * what to do based on which button was clicked in the handler function
