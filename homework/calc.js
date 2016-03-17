@@ -1,30 +1,21 @@
 // DEFINE YOUR VARIABLES HERE
 var select = document.querySelector("figure");
-
-
-
 // DEFINE YOUR FUNCTIONS HERE
 
 function handleButtonClick(element) {
     // You can use this to get the value of the button:
     // element.value
     if ( Number(element.value)){
+      select.innerHTML = select.innerHTML + element.value;
+    } else if ( !Number(element.value)) {
       select.innerHTML = element.value;
+    }
 }
 
 
-    // } else if (element.value === "9"){
-    //   select.innerHTML = "heeloo"
-    //
-    //   var total = 9;
-    // } else if { (element.value === "8"){
-    //   var total = 8;
-    // }
-    // select.innerHTML = total;
 
 
 
-}
 function addToTotal(runningTotal, newNumber) {
   var newTotal = runningTotal + newNumber;
   return newTotal;
